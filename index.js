@@ -3,8 +3,8 @@ const cors = require("cors");
 const morgan = require("morgan");
 const express = require("express");
 const mongoose = require("mongoose");
-const apiRouter = require("./src/controllers/api/apiRouter");
-const adminRouter = require("./src/controllers/admin/adminRouter");
+const apiRouter = require("./src/controllers/api");
+const adminRouter = require("./src/controllers/admin");
 
 const app = express();
 const port = process.env.PORT || 5000;
