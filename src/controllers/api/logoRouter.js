@@ -14,12 +14,13 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.get("/", (req, res) => {
-  res.sendFile(process.cwd() + "/uploads/logo/logo.png");
+  const logoImagePath = process.cwd() + "/uploads/logo/logo.png";
+  res.sendFile(logoImagePath);
 });
 
 router.post("/", upload.single("logo"), (req, res) => {
   console.log(req.file, req.originalUrl);
-  res.redirect("/");
+  res.redirect("/api");
 });
 
 module.exports = router;
