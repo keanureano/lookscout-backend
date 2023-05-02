@@ -5,33 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
+    <style>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      div {
+        border: 1px solid #ccc;
+        background-color: #eee;
+        padding: 24px;
+        margin: 16px;
+        min-width: 320px;
+        min-height: 320px;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <h2>View Names & Email</h2>
-      <a href="/api/content">view here</a>
-    </div>
-    <hr />
-    <div>
-      <h2>Upload Logo</h2>
-      <img src="/api/logo" alt="logo" width="240px" />
-      <form action="/api/logo" method="post" enctype="multipart/form-data">
-        <input type="file" name="logo" />
-        <button type="submit">upload</button>
-      </form>
-    </div>
-    <hr />
-    <div>
-      <h2>View Button Text</h2>
-      <a href="/api/button">view here</a>
-    </div>
-    <hr />
-    <div>
-      <h2>Change Button Text</h2>
-      <form action="/api/button" method="post">
-        <input type="text" name="text" />
-        <button type="submit">submit</button>
-      </form>
-    </div>
+    <main>
+      <div>
+        <h2>Logo</h2>
+        <a href="/api/logo"><button>View /api/logo</button></a>
+        <img src="/api/logo" alt="logo" width="160px" />
+        <form action="/api/logo" method="post" enctype="multipart/form-data">
+          <input type="file" name="logo" />
+          <button type="submit">Upload</button>
+        </form>
+      </div>
+      <div>
+        <h2>Button Text</h2>
+        <a href="/api/button"><button>View /api/button</button></a>
+        <form action="/api/button" method="post">
+          <input type="text" name="text" placeholder="Change" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div>
+        <h2>Names & Email</h2>
+        <a href="/api/content"><button>View /api/content</button></a>
+      </div>
+    </main>
   </body>
 </html>
