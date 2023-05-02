@@ -1,7 +1,8 @@
 require("dotenv").config();
+const cors = require("cors");
+const morgan = require("morgan");
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
 const apiRouter = require("./src/controllers/api/apiRouter");
 const adminRouter = require("./src/controllers/admin/adminRouter");
 
@@ -9,6 +10,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors());
+app.use(morgan("tiny"));
 app.use(express.json());
 
 app.use("/", adminRouter);
