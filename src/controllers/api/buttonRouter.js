@@ -3,8 +3,10 @@ const router = express.Router();
 const Button = require("../../models/button");
 
 router.get("/", async (req, res) => {
-  const button = await Button.find({});
-  res.json(button);
+  const data = await Button.find({});
+  const prettyData = JSON.stringify(data, null, 2);
+  res.setHeader("Content-Type", "application/json");
+  res.send(prettyData);
 });
 
 router.post("/", async (req, res) => {
