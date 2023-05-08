@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiUrl = "http://localhost:5000/api";
 
-export const logoUrl = `${apiUrl}/logo`;
+export const logoUrl = "/api/logo";
 
 export function getButtonText() {
   return axios.get(`${apiUrl}/button`).then((res) => res.data[0].text);

@@ -1,5 +1,4 @@
 import { logoUrl } from "../services/apiService";
-
 function CompanyLogo() {
   return (
     <div className="CompanyLogo">
