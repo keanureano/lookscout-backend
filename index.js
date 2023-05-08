@@ -17,6 +17,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api", apiRouter);
 
+const frontendDir = __dirname + "/frontend/dist/";
+app.use(express.static(frontendDir));
+app.get("*", (req, res) => {
+  res.sendFile(frontendDir + "index.html");
+});
+
 mongoose.connect(process.env.MONGODB_URI);
 const connection = mongoose.connection;
 connection.once("open", () => {
