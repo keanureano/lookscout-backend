@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   await Button.deleteMany({});
   const newButton = await Button.create(req.body);
-  await newButton.save(newButton);
+  await newButton.save();
   res.redirect("/api/");
 });
 

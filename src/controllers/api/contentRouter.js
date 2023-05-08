@@ -7,4 +7,10 @@ router.get("/", async (req, res) => {
   res.json(data);
 });
 
+router.post("/", async (req, res) => {
+  const newContent = await Content.create(req.body);
+  await newContent.save();
+  res.json(newContent);
+});
+
 module.exports = router;
